@@ -1,12 +1,12 @@
 {
   "domain": "istore_heatpump",
   "name": "iStore Heat Pump",
-  "version": "1.0.0",
-  "documentation": "https://example.com",
+  "version": "1.1.0",
+  "documentation": "https://github.com/clutrz/istore-ha",
   "requirements": [
     "cryptography>=41.0.0"
   ],
-  "codeowners": ["@yourname"],
+  "codeowners": ["@kungbernard", "@clutrz"],
   "iot_class": "cloud_polling",
   "config_flow": true,
   "integration_type": "hub",
