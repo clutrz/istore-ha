@@ -28,9 +28,8 @@ Provides full monitoring + control using the official iStore API. This integrati
 ## Full Control
 - Power ON/OFF  
 - Booster ON/OFF  
-- Set Target Temperature  (must be between min and max temperature)
-- Set Min/Max Temperature  (10-75 degrees)
-
+- Set Timers ON/OFF
+- Change Timer Start / Stop times
 ---
 
 ## Installation
@@ -49,40 +48,10 @@ Settings → Devices & Services → Add Integration → “iStore Heat Pump”
 
 ## Configuration
 
-The integration requires 3 inputs:
+Add the username and password you use to login to https://home.istore.net.au/hossain-fe/index.html?login
+Update / override the other options such as tempering valve temp (if you have a tempering valve installed for example to limit hot water to 50'), shower temp, and assumed cold water temp (these are used for calculation of remaining hot water and shower time)
 
-| Field | Description |
-|-------|-------------|
-| access_token | From browser Network tab (`Bearer APP_PORTAL_S_...`) |
-| parent_id | From asset-hierarchy API (`parentId`) |
-| mdm_id | Device ID (`mdmId`, e.g. J8PqiKt2) |
-
-
-To acquire the above parameters, please follow the following steps:
-
-1. Open a desktop web browser (eg. Google Chrome) and open the URL https://home.istore.net.au/
-
-2. Right click on the web page (any white space), then click "Inspect", this opens the Developer Console
-
-3. Go to "Network" tab in the Developer Console, then check the "Preserve log" box
-![Step 3](images/step3.png)
-
-4. Login using the same credential as the Univers EMS mobile app where you have setup to control the iStore R290 hot water system
-
-5. After login to iStore, navigate to "Device Monitoring" on the left menu, the click on "Device Type" drop down, and choose "Water Heater"
-![Step 5](images/step5.png)
-
-6. Find the "asset-hierarchy" in the list below (in the Network tab of Developer Console) and click on it. Then select the "Response" tab on the right. Check on the json data where it should has "Res_WaterHeater", and under attributes, there's "mdmId" and "parentId". These are the mdm_id and parent_id. Note: if the asset-hierarchy doesn't have the mdmId and parentId, just refresh the web page and try again.
-![Step 6](images/step6.png)
-
-7. Click on "Application" tab on the top of the Developer Console, then expand "Local storage" -> "https://home.istore.net.au", and find the "access_token_key" on the right hand side list, the key should looks like APP_PORTAL_X_XXXXXXXXXX, this is the access_token.
-![Step 7](images/step7.png)
-
-### Please do not log out from iStore website, you can simply close the web page / web browser. If you log out, the access token will no longer be valid
-
-8. After acquire all the 3 parameters, you can now "Add Integration" in Home Assistant and add the iStore Heat Pump custom component using the 3 parameters.
-![Step 8](images/step8.png)
-
+Note if you change your password in the iStore portal, you can update the password in the integration to match.
 
 ---
 
@@ -115,7 +84,6 @@ To acquire the above parameters, please follow the following steps:
 
 - Since this is using iStore API to control the hot water system, it will take up to 15 seconds for any changes (eg. On/Off, change temperature, Booster etc.)
 - Sensor data are updated every 30 seconds
-- It use the same access token, so make sure you do not "logout" the web page where you acquire the access token. However, you can safely just close the browser or web page without logging out. The access token will not expire as long as you dont actively logout the session that you originally acquire the access token.
 
 ---
 
