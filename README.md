@@ -84,7 +84,6 @@ Note if you change your password in the iStore portal, you can update the passwo
 
 - Since this is using iStore API to control the hot water system, it will take up to 15 seconds for any changes (eg. On/Off, change temperature, Booster etc.)
 - Sensor data are updated every 30 seconds
-- It use the same access token, so make sure you do not "logout" the web page where you acquire the access token. However, you can safely just close the browser or web page without logging out. The access token will not expire as long as you dont actively logout the session that you originally acquire the access token.
 
 ---
 
