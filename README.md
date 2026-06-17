@@ -39,9 +39,12 @@ Provides full monitoring + control using the official iStore API. This integrati
 1. Copy the **istore_heatpump** folder into:
 /config/custom_components/istore_heatpump/
 
-2. Restart Home Assistant
+OR
+add this site as a custom repository in HACS
 
-3. Go to:
+3. Restart Home Assistant
+
+4. Go to:
 Settings → Devices & Services → Add Integration → “iStore Heat Pump”
 
 ---
