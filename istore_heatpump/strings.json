@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "iStore Heat Pump",
+        "description": "Enter your iStore account credentials.",
+        "data": {
+          "username": "Username (email address)",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the iStore cloud. Check your network and try again.",
+      "invalid_auth": "Invalid username or password.",
+      "unknown": "An unexpected error occurred. Check the Home Assistant logs for details."
+    },
+    "abort": {
+      "already_configured": "iStore Heat Pump is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure iStore Heat Pump",
+        "description": "Update your credentials and set optional parameters for hot water estimation calculations.",
+        "data": {
+          "username": "Username (email address)",
+          "password": "Password",
+          "cold_water_temp": "Cold Water Inlet Temperature (°C)",
+          "shower_flow_rate": "Shower Flow Rate (L/min)",
+          "shower_temp": "Shower Target Temperature (°C)",
+          "tempering_temp": "Tempering Valve Temperature (°C)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the iStore cloud. Check your network and try again.",
+      "invalid_auth": "Invalid username or password.",
+      "unknown": "An unexpected error occurred. Check the Home Assistant logs for details."
+    }
+  }
+}
